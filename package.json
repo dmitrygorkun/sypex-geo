@@ -1,0 +1,38 @@
+{
+  "name": "@gorkun/sypex-geo",
+  "version": "0.0.3",
+  "description": "Unofficial Sypex Geo Client for NodeJS.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/dmitrygorkun/sypex-geo.git",
+  "author": "Dmitry Gorkun <dmitry@gorkun.ru>",
+  "license": "UNLICENSED",
+  "private": false,
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "tsc",
+    "prepublishOnly": "yarn run build",
+    "postpublish": "yarn run clean"
+  },
+  "keywords": [
+    "geoIP",
+    "sypex",
+    "geo",
+    "sypex-geo"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "bugs": {
+    "url": "https://github.com/dmitrygorkun/sypex-geo/issues"
+  },
+  "homepage": "https://github.com/dmitrygorkun/sypex-geo#readme",
+  "dependencies": {
+    "unzipper": "^0.10.11"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.2",
+    "@types/unzipper": "^0.10.3",
+    "typescript": "^4.0.2"
+  }
+}

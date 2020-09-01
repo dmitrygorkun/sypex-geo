@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "commonjs",
+    "outDir": "dist",
+    "lib": [
+      "ES2020",
+      "dom"
+    ],
+    "strict": true,
+    "declaration": true,
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
