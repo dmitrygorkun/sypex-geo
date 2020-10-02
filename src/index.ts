@@ -215,20 +215,26 @@ export class SypexGeoClient {
             return null;
         }
 
-        const city: SypexCityInterface = this.readCity(seek);
-        if (mode === SypexResponseType.CITY) {
-            return city;
-        }
+        try {
 
-        const region: SypexRegionInterface = this.readRegion(city.region_seek);
-        if (mode === SypexResponseType.REGION) {
-            return region;
-        }
+            const city: SypexCityInterface = this.readCity(seek);
+            if (mode === SypexResponseType.CITY) {
+                return city;
+            }
 
-        const country: SypexCountryInterface = this.readCountry(region.country_seek);
+            const region: SypexRegionInterface = this.readRegion(city.region_seek);
+            if (mode === SypexResponseType.REGION) {
+                return region;
+            }
 
-        return mode === SypexResponseType.COUNTRY ? country : {
-            city, region, country
+            const country: SypexCountryInterface = this.readCountry(region.country_seek);
+
+            return mode === SypexResponseType.COUNTRY ? country : {
+                city, region, country
+            }
+
+        } catch (e) {
+            return null;
         }
     }
 
